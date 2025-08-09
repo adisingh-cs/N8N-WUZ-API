@@ -1,13 +1,9 @@
-FROM node:18-alpine
+FROM wuzapi/wuzapi:latest
 
-# Install Wuzapi
-RUN npm install -g wuzapi
+ENV WUZAPI_ADMIN_USER=admin
+ENV WUZAPI_ADMIN_PASS=lolstr7@LOL
+ENV PORT=8080
 
-# Create app directory
-WORKDIR /app
-
-# Expose the port
 EXPOSE 8080
 
-# Run Wuzapi
-CMD ["wuzapi", "start", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["npm", "start"]
