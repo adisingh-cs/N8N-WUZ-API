@@ -19,11 +19,6 @@ COPY --from=builder /app/.env.sample /app/.env.sample
 
 WORKDIR /app
 
-# Default environment variables
-ENV WUZAPI_ADMIN_TOKEN=admin-token-here \
-    TZ=UTC \
-    PORT=8080
-
 EXPOSE 8080
 
 CMD ["wuzapi"]
